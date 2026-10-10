@@ -26,7 +26,7 @@ function Header() {
   const { t } = useLang()
   const [open, setOpen] = useState(false)
   const { pathname } = useLocation()
-  useEffect(() => setOpen(false), [pathname])
+  useEffect(() => { setOpen(false) }, [pathname])
 
   const linkClass = ({ isActive }) =>
     `text-[15px] font-medium transition ${isActive ? 'text-brand-600' : 'text-slate-600 hover:text-slate-900'}`
@@ -87,7 +87,7 @@ function Footer() {
 
 export default function Layout() {
   const { pathname } = useLocation()
-  useEffect(() => window.scrollTo(0, 0), [pathname])
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
