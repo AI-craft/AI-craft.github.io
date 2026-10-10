@@ -33,8 +33,8 @@ export default function Purchase() {
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
         <ol className="mb-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {purchase.steps.map((s, i) => (
-            <li key={i} className="rounded-lg bg-slate-50 px-4 py-3 text-sm ring-1 ring-slate-200">
-              <span className="font-bold text-brand-600">{i + 1}.</span> <span className="font-medium text-slate-800">{t(s)}</span>
+            <li key={i} className="rounded-lg bg-surface-2 px-4 py-3 text-sm ring-1 ring-white/10">
+              <span className="font-bold text-brand-400">{i + 1}.</span> <span className="font-medium text-slate-100">{t(s)}</span>
             </li>
           ))}
         </ol>

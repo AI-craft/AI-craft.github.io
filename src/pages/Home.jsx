@@ -32,14 +32,14 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900">{t(home.aboutTitle)}</h2>
-            <p className="mt-6 text-lg leading-relaxed text-slate-600">{t(home.aboutText)}</p>
+            <h2 className="text-3xl font-bold text-white">{t(home.aboutTitle)}</h2>
+            <p className="mt-6 text-lg leading-relaxed text-slate-300">{t(home.aboutText)}</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
             {home.highlights.map((h, i) => (
-              <div key={i} className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5">
-                <p className="text-2xl font-bold text-brand-600">{t(h.value)}</p>
-                <p className="mt-1 text-sm text-slate-600">{t(h.label)}</p>
+              <div key={i} className="rounded-xl border border-white/10 bg-surface-2 px-6 py-5">
+                <p className="text-2xl font-bold text-brand-400">{t(h.value)}</p>
+                <p className="mt-1 text-sm text-slate-300">{t(h.label)}</p>
               </div>
             ))}
           </div>
@@ -47,17 +47,17 @@ export default function Home() {
       </section>
 
       {/* Capabilities */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-surface-2 py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-slate-900">{t(home.capabilitiesTitle)}</h2>
+          <h2 className="text-3xl font-bold text-white">{t(home.capabilitiesTitle)}</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.items.map((s, i) => (
-              <Link key={i} to="/services" className="group rounded-xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+              <Link key={i} to="/services" className="group rounded-xl border border-white/10 bg-surface p-6 transition hover:-translate-y-1 hover:shadow-lg">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-500/15 text-brand-400">
                   <Icon name={s.icon} />
                 </div>
-                <h3 className="mt-5 font-semibold text-slate-900">{t(s.title)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t(s.text)}</p>
+                <h3 className="mt-5 font-semibold text-white">{t(s.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">{t(s.text)}</p>
               </Link>
             ))}
           </div>
@@ -68,10 +68,10 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900">{t(home.productsTitle)}</h2>
-            <p className="mt-3 text-slate-600">{t(home.productsText)}</p>
+            <h2 className="text-3xl font-bold text-white">{t(home.productsTitle)}</h2>
+            <p className="mt-3 text-slate-300">{t(home.productsText)}</p>
           </div>
-          <Link to="/products" className="inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700">
+          <Link to="/products" className="inline-flex items-center gap-1 font-semibold text-brand-400 hover:text-brand-300">
             {t(ui.allProducts)} <Icon name="arrow" className="size-4" />
           </Link>
         </div>
@@ -81,12 +81,12 @@ export default function Home() {
       </section>
 
       {/* Industries */}
-      <section className="border-y border-slate-200 bg-slate-50 py-14">
+      <section className="border-y border-white/10 bg-surface-2 py-14">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-10 gap-y-4 px-4 sm:px-6">
-          <h2 className="text-lg font-bold text-slate-900">{t(home.industriesTitle)}</h2>
+          <h2 className="text-lg font-bold text-white">{t(home.industriesTitle)}</h2>
           {home.industries.map((ind, i) => (
-            <span key={i} className="flex items-center gap-2 text-slate-600">
-              <Icon name="check" className="size-4 text-brand-600" /> {t(ind)}
+            <span key={i} className="flex items-center gap-2 text-slate-300">
+              <Icon name="check" className="size-4 text-brand-400" /> {t(ind)}
             </span>
           ))}
         </div>
@@ -105,7 +105,7 @@ export function CtaBand() {
         <h2 className="text-2xl font-bold text-white sm:text-3xl">{t(home.ctaTitle)}</h2>
         <p className="mt-3 text-brand-100">{t(home.ctaText)}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link to="/purchase" className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition hover:bg-brand-50">{t(ui.requestQuote)}</Link>
+          <Link to="/purchase" className="rounded-lg bg-white px-6 py-3 font-semibold text-brand-700 transition hover:bg-brand-100">{t(ui.requestQuote)}</Link>
           <Link to="/contact" className="rounded-lg border border-white/40 px-6 py-3 font-semibold text-white transition hover:bg-white/10">{t(ui.contactUs)}</Link>
         </div>
       </div>

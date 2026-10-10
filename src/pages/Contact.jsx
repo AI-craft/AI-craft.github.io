@@ -28,20 +28,20 @@ export default function Contact() {
           submitLabel={contact.submit}
         />
         <aside className="space-y-6 lg:self-start">
-          <h2 className="text-xl font-bold text-slate-900">{t(contact.infoTitle)}</h2>
+          <h2 className="text-xl font-bold text-white">{t(contact.infoTitle)}</h2>
           <div className="flex gap-4">
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600"><Icon name="mail" className="size-5" /></div>
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-500/15 text-brand-400"><Icon name="mail" className="size-5" /></div>
             <div>
-              <p className="text-sm text-slate-500">{t(contact.emailLabel)}</p>
-              <a href={`mailto:${company.email}`} className="font-medium text-slate-900 hover:text-brand-600">{company.email}</a>
+              <p className="text-sm text-slate-400">{t(contact.emailLabel)}</p>
+              <a href={`mailto:${company.email}`} className="font-medium text-white hover:text-brand-400">{company.email}</a>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600"><Icon name="pin" className="size-5" /></div>
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-500/15 text-brand-400"><Icon name="pin" className="size-5" /></div>
             <div>
-              <p className="text-sm text-slate-500">{t(contact.addressLabel)}</p>
-              <p className="font-medium leading-relaxed text-slate-900">{t(company.address)}</p>
-              <a href={company.mapUrl} target="_blank" rel="noreferrer" className="mt-1 inline-block text-sm font-semibold text-brand-600 hover:text-brand-700">
+              <p className="text-sm text-slate-400">{t(contact.addressLabel)}</p>
+              <p className="font-medium leading-relaxed text-white">{t(company.address)}</p>
+              <a href={company.mapUrl} target="_blank" rel="noreferrer" className="mt-1 inline-block text-sm font-semibold text-brand-400 hover:text-brand-300">
                 {t(contact.mapLink)} →
               </a>
             </div>

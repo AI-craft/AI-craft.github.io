@@ -8,12 +8,12 @@ import Icon from './Icon'
 function LangToggle() {
   const { lang, setLang } = useLang()
   return (
-    <div className="flex items-center rounded-full border border-slate-200 p-0.5 text-xs font-semibold">
+    <div className="flex items-center rounded-full border border-white/10 p-0.5 text-xs font-semibold">
       {['ko', 'en'].map((l) => (
         <button
           key={l}
           onClick={() => setLang(l)}
-          className={`rounded-full px-2.5 py-1 transition ${lang === l ? 'bg-brand-600 text-white' : 'text-slate-500 hover:text-slate-900'}`}
+          className={`rounded-full px-2.5 py-1 transition ${lang === l ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'}`}
         >
           {l === 'ko' ? '한국어' : 'EN'}
         </button>
@@ -29,10 +29,10 @@ function Header() {
   useEffect(() => { setOpen(false) }, [pathname])
 
   const linkClass = ({ isActive }) =>
-    `text-[15px] font-medium transition ${isActive ? 'text-brand-600' : 'text-slate-600 hover:text-slate-900'}`
+    `text-[15px] font-medium transition ${isActive ? 'text-brand-400' : 'text-slate-300 hover:text-white'}`
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="shrink-0">
           <img src={logo} alt="AICraft" className="h-8 w-auto" />
@@ -44,13 +44,13 @@ function Header() {
         </nav>
         <div className="flex items-center gap-3">
           <LangToggle />
-          <button className="text-slate-700 md:hidden" onClick={() => setOpen(!open)} aria-label="menu">
+          <button className="text-slate-200 md:hidden" onClick={() => setOpen(!open)} aria-label="menu">
             <Icon name={open ? 'close' : 'menu'} />
           </button>
         </div>
       </div>
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-slate-100 bg-white px-4 py-3 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-white/10 bg-ink px-4 py-3 md:hidden">
           {nav.map((n) => (
             <NavLink key={n.to} to={n.to} end={n.to === '/'} className={(s) => `rounded-lg px-3 py-2.5 ${linkClass(s)}`}>
               {t(n.label)}
@@ -65,7 +65,7 @@ function Header() {
 function Footer() {
   const { t } = useLang()
   return (
-    <footer className="bg-navy-900 text-slate-400">
+    <footer className="bg-navy-950 border-t border-white/10 text-slate-400">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.5fr_1fr]">
         <div>
           <p className="text-lg font-semibold text-white">{t(company.name)}</p>

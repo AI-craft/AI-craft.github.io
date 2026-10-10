@@ -29,13 +29,13 @@ export default function ProductDetail() {
 
       <section className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.6fr_1fr]">
         <div>
-          <p className="text-lg leading-relaxed text-slate-700">{t(p.summary)}</p>
+          <p className="text-lg leading-relaxed text-slate-200">{t(p.summary)}</p>
 
-          <h2 className="mt-12 text-xl font-bold text-slate-900">{t(ui.features)}</h2>
+          <h2 className="mt-12 text-xl font-bold text-white">{t(ui.features)}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {p.features.map((f, i) => (
-              <li key={i} className="flex gap-3 rounded-lg border border-slate-200 p-4 text-sm leading-relaxed">
-                <Icon name="check" className="mt-0.5 size-4 shrink-0 text-brand-600" />
+              <li key={i} className="flex gap-3 rounded-lg border border-white/10 p-4 text-sm leading-relaxed">
+                <Icon name="check" className="mt-0.5 size-4 shrink-0 text-brand-400" />
                 {t(f)}
               </li>
             ))}
@@ -44,27 +44,27 @@ export default function ProductDetail() {
           {p.images.length > 0 && (
             <div className="mt-12 grid gap-4">
               {p.images.map((src, i) => (
-                <img key={i} src={src} alt={`${t(p.name)} ${i + 1}`} className="w-full rounded-xl border border-slate-200 bg-slate-50" loading="lazy" />
+                <img key={i} src={src} alt={`${t(p.name)} ${i + 1}`} className="w-full rounded-xl border border-white/10 bg-surface-2" loading="lazy" />
               ))}
             </div>
           )}
         </div>
 
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-          <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-sm font-semibold tracking-wide text-slate-500 uppercase">{t(ui.tech)}</h3>
+          <div className="rounded-xl border border-white/10 bg-surface-2 p-6">
+            <h3 className="text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.tech)}</h3>
             <div className="mt-3 flex flex-wrap gap-2">
               {p.tech.map((x) => (
-                <span key={x} className="rounded-full bg-white px-3 py-1 text-sm text-slate-700 ring-1 ring-slate-200">{x}</span>
+                <span key={x} className="rounded-full bg-surface px-3 py-1 text-sm text-slate-200 ring-1 ring-white/10">{x}</span>
               ))}
             </div>
-            <h3 className="mt-6 text-sm font-semibold tracking-wide text-slate-500 uppercase">{t(ui.useCases)}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-700">{t(p.useCases)}</p>
+            <h3 className="mt-6 text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.useCases)}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">{t(p.useCases)}</p>
           </div>
           <Link to={`/purchase?item=${p.id}`} className="block rounded-lg bg-brand-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-brand-700">
             {t(ui.requestQuote)}
           </Link>
-          <Link to="/contact" className="block rounded-lg border border-slate-300 px-6 py-3 text-center font-semibold text-slate-700 transition hover:bg-slate-50">
+          <Link to="/contact" className="block rounded-lg border border-white/15 px-6 py-3 text-center font-semibold text-slate-200 transition hover:bg-white/5">
             {t(ui.contactUs)}
           </Link>
         </aside>
