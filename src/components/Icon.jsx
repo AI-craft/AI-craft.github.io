@@ -14,6 +14,7 @@ const paths = {
   check: 'M20 6 9 17l-5-5',
   menu: 'M4 6h16M4 12h16M4 18h16',
   close: 'M18 6 6 18M6 6l12 12',
+  flask: 'M10 2v7.3L4.2 19.1A2 2 0 0 0 6 22h12a2 2 0 0 0 1.8-2.9L14 9.3V2M8.5 2h7M7 16h10',
 }
 
 export default function Icon({ name, className = 'size-6' }) {

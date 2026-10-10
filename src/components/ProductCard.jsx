@@ -13,6 +13,9 @@ export default function ProductCard({ product: p }) {
         ) : (
           <Icon name={p.icon} className="size-16 text-white/80" />
         )}
+        {p.comingSoon && (
+          <span className="absolute top-3 right-3 rounded-full bg-amber-400 px-2.5 py-0.5 text-xs font-bold text-navy-900">{t(ui.comingSoon)}</span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold text-white">{t(p.name)}</h3>

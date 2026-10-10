@@ -38,6 +38,11 @@ export const ui = {
   backToProducts: { ko: '← 제품 목록', en: '← All products' },
   notFound: { ko: '페이지를 찾을 수 없습니다.', en: 'Page not found.' },
   goHome: { ko: '홈으로', en: 'Go home' },
+  comingSoon: { ko: '준비 중', en: 'Coming soon' },
+  comingSoonText: {
+    ko: '이 제품 페이지는 현재 준비 중입니다. 자세한 내용이 궁금하시면 문의해 주세요.',
+    en: 'This product page is under construction. Please contact us for details.',
+  },
 }
 
 export const home = {
@@ -200,6 +205,21 @@ export const products = [
     ],
     tech: ['Python', 'Spot SDK', 'TCP/IP', 'SQL Server', 'OpenCV'],
     useCases: { ko: '설비 순찰 로봇, 위험 구역 원격 점검', en: 'Patrol robots, remote inspection of hazardous areas' },
+    images: [],
+  },
+  {
+    id: 'brewing',
+    icon: 'flask',
+    comingSoon: true,
+    name: { ko: '양조 공정 솔루션', en: 'Brewing Process Solution' },
+    tagline: { ko: '전통주 양조 과정을 위한 모니터링 솔루션', en: 'Monitoring for traditional Korean liquor brewing' },
+    summary: {
+      ko: '전통주 양조 과정의 데이터를 수집하고 모니터링하는 솔루션입니다.',
+      en: 'A solution for collecting and monitoring data from the traditional Korean liquor brewing process.',
+    },
+    features: [],
+    tech: [],
+    useCases: { ko: '전통주 양조장', en: 'Traditional breweries' },
     images: [],
   },
 ]

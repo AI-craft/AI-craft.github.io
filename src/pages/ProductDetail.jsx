@@ -31,15 +31,26 @@ export default function ProductDetail() {
         <div>
           <p className="text-lg leading-relaxed text-slate-200">{t(p.summary)}</p>
 
-          <h2 className="mt-12 text-xl font-bold text-white">{t(ui.features)}</h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {p.features.map((f, i) => (
-              <li key={i} className="flex gap-3 rounded-lg border border-white/10 p-4 text-sm leading-relaxed">
-                <Icon name="check" className="mt-0.5 size-4 shrink-0 text-brand-400" />
-                {t(f)}
-              </li>
-            ))}
-          </ul>
+          {p.comingSoon && (
+            <div className="mt-10 rounded-xl border border-amber-400/30 bg-amber-400/10 p-6">
+              <span className="rounded-full bg-amber-400 px-2.5 py-0.5 text-xs font-bold text-navy-900">{t(ui.comingSoon)}</span>
+              <p className="mt-3 leading-relaxed text-amber-100">{t(ui.comingSoonText)}</p>
+            </div>
+          )}
+
+          {p.features.length > 0 && (
+            <>
+              <h2 className="mt-12 text-xl font-bold text-white">{t(ui.features)}</h2>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                {p.features.map((f, i) => (
+                  <li key={i} className="flex gap-3 rounded-lg border border-white/10 p-4 text-sm leading-relaxed">
+                    <Icon name="check" className="mt-0.5 size-4 shrink-0 text-brand-400" />
+                    {t(f)}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           {p.images.length > 0 && (
             <div className="mt-12 grid gap-4">
@@ -52,13 +63,17 @@ export default function ProductDetail() {
 
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-xl border border-white/10 bg-surface-2 p-6">
-            <h3 className="text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.tech)}</h3>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {p.tech.map((x) => (
-                <span key={x} className="rounded-full bg-surface px-3 py-1 text-sm text-slate-200 ring-1 ring-white/10">{x}</span>
-              ))}
-            </div>
-            <h3 className="mt-6 text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.useCases)}</h3>
+            {p.tech.length > 0 && (
+              <>
+                <h3 className="mb-3 text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.tech)}</h3>
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {p.tech.map((x) => (
+                    <span key={x} className="rounded-full bg-surface px-3 py-1 text-sm text-slate-200 ring-1 ring-white/10">{x}</span>
+                  ))}
+                </div>
+              </>
+            )}
+            <h3 className="text-sm font-semibold tracking-wide text-slate-400 uppercase">{t(ui.useCases)}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-200">{t(p.useCases)}</p>
           </div>
           <Link to={`/purchase?item=${p.id}`} className="block rounded-lg bg-brand-600 px-6 py-3 text-center font-semibold text-white transition hover:bg-brand-700">
